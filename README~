@@ -1,0 +1,67 @@
+				2048
+
+	Jocul are la baza o matrice de 4 pe 4. Aceasta este initializata cu
+0 si cu 2 valori din multimea {2,4} in cazul unui joc nou.
+	Matricea aceasta sau cea citita din fisier la optiunea "resume" sunt
+trimise functiei principale spre a fi prelucrate.
+	Afisarea este realizata de o functie separata, ce se ocupa de tot 
+ecranul de joc (tabela de joc, scorul, legenda comenzilor, data si ora).
+	In functie de input-ul primit, elementele se vor muta pe directia 
+corespunzatoare, elementele identice fiind adunate si suma scrisa intr-o 
+singura casuta.
+	Daca timp de 25 de secunde nu a fost apasata nici o tasta jocul 
+va face o mutare in directia care elibereaza cel mai mare numar de casute.
+	Functia "automove" efectueaza o miscare in directia ce elibereaza 
+cele mai multe casute. Daca mai multe miscari elibereaza acelasi numar de 
+casute, ordinea miscarilor este jos, stanga, dreapta si sus; directia aleasa 
+este prima care are un numar mai mare de casute libere.
+	La apasarea tasetei "u" se va executa functia undeo, ce inlocuieste 
+matricea curenta cu cea dinaintea efectuarii ultimei miscari.
+	Jocul se incheie atunci cand nu se mai pot efectua miscari (fortat)
+sau la atingerea numarului 2048 (jucatorul poate decide sa continuie jocul).
+	La apasarea tastei q matricea si scorul sunt salvate, insa scorul 
+nu este comparat cu cele din highscores, aceasta operatie fiind rezervata 
+pentru finalul jocului.
+	Tasta ESC sare peste etapa de salvare, opreste jocul si afiseaza 
+meniul principal.
+
+-comenzile pentru meniu sunt sagetelele si tasta enter;
+
+-comenzile pentru joc sunt tastele w, a, s, d si u, pentru undo;
+
+-comenzi extinse: "ESC" pentru a iesi din joc fara a salva;
+		 "b" pentru a porni/opri functia de autosave;
+		 "F6" pentru a afisa tabela de comenzi;
+-jocul va efectua o miscare automata la 25 de secunde de inactivitate;
+
+Bonusuri:
+	-culori pentru fiecare numar in parte, pana la 65536, unde culorile 
+incep sa se repete;
+	-functia undo, ce poate fi folosita pentru a schimba 1 miscare; ea 
+poate fi folosita de oricate ori doreste utilizatorul;
+	-la apasarea tastei q jocul este salvat intr-un fisier numit save;
+jocul poate fi reluat si dupa inchiderea programului;
+	-functie de autosave: jocul este salvat din 10 in 10 mutari, in mod 
+automat; aceasta functie poate fi pornita/oprita in cadrul jocului (jocul 
+incepe cu autosave enabled);
+	-tabela highscores ce afiseaza cele mai mari 5 scoruri obtinute pe 
+parcursul jocului; datele sunt retinute intr-un fisier numit highscores ;
+	-ceasul jocului se actualizeaza in timp real;
+	-odata incheiat un joc (nu se mai pot efectua mutari sau utilizatorul
+nu doreste continuarea dupa 2048) programul deschide meniul highscores si 
+afiseaza scorul nou obtinut, in tabela daca e cazul, sub aceasta daca este 
+prea mic;
+	-o mutare incorecta (nu deplaseaza casutele pe directia selectata) 
+va afisa mesajul "Incorrect move" si va astepta un input corect;
+	-tabela de instructiuni va aparea intr-o fereastra separata la
+apasarea tastei F6 
+
+
+	Note:
+jocul a fost testat pe un terminal cu 256 de culori, pe dimesiunile standard
+make clean NU sterge fisierele "save" si "highscores"
+
+
+Timp de lucru: aproximativ 19 ore
+Bratu Andrei
+311CC
